@@ -1,0 +1,55 @@
+<!-- <div class="container">
+
+
+  <form action="/tasks" method="post">
+
+    <div class="form-group">
+      <label for="task">New Task</label>
+      <input type="text" class="form-control" placeholder="Enter task">
+    </div>
+    <div class="form-group">
+      <label for="details">Task Details:</label>
+      <input type="text" class="form-control" placeholder="Task Details">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Completed</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div> -->
+<div class="container">
+
+  <div class="card">
+
+      <%= form_for(@task) do |f| %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :details %>
+        <%= f.text_field :details, class: "form-control" %>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <%= f.check_box :completed, class: "form-check-label" %>
+        <%= f.label :completed %>
+     </div>
+
+      <br>
+      <br>
+      <div class="d-flex justify-content-around" >
+
+      <%= link_to tasks_path do %>
+        <i class="fas fa-undo">main page</i>
+      <% end %>
+
+      <%= f.submit "SUBMIT", class: "btn btn-outline-primary" %>
+
+     <% end %>
+  </div>
+
+</div>
